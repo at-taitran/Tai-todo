@@ -1,0 +1,18 @@
+// == Breakpoints ===
+$breakpoints: (
+  small: 480px,
+  medium: 768px,
+  wide: 960px,
+  large: 1024px,
+  largest: 1280px
+);
+//font
+$font-title1:'Roboto', sans-serif;
+$font-title2:'Poppins', sans-serif;
+$font-content1:'Quicksand', sans-serif;
+$font-content2:'Varela Round', sans-serif;
+//color
+$cl-w2:aliceblue;
+$cl-gray1: #888;
+$cl-gray2:#f4f4f4;
+$cl-b1:#1a1a1a;

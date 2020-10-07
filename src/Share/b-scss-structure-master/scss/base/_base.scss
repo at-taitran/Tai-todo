@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+// Border set
+@mixin border($name,$width,$style,$color) {
+  .#{$name}-bd{
+    border: $width $style $color;
+  }
+}
+// @include border(btn-bor, 1px, solid, #888)
+
+//Transition set
+@mixin transition($name,$time,$style,$dtime){
+  .#{$name}-transit{
+    transition: all $time $style $dtime;
+  }
+}
+// @include transition(btn,0.2s,ease-in-out,0s);
+
+//Hover set
+@mixin hover-transform($name,$transform,$style,$transtime){
+  .#{$name}:hover{
+    transform: $transform($style);
+    transition: $transtime;
+  }
+}
+// @include hover-transform(image,translateX,10px,0.2s);
+
+// Border radius
+@mixin BorderRadius($value) {
+  .bd-radius-#{$value}{
+    border-radius: $value;
+  }
+}
+// @include BorderRadius(10px);
+// @for $i from 1 to 21{
+//   @include BorderRadius($i);
+// }
+// hover rotate 360
+@mixin hover-2img-rotate180($name,$time,$delay){
+  .#{$name}:hover :first-child{
+    opacity: 0;
+    transition: all $time linear $delay;
+    transform: rotateY(90deg);
+  }
+  .#{$name}:hover :last-child{
+    opacity: 0;
+    transition: all $time linear $delay;
+    transform: rotateY(180);
+  }
+}
+// @include hover-2img-rotate180(imgrotate180,0.2s ,0s );

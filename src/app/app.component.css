@@ -1,0 +1,31 @@
+@import '../../node_modules/fontawesome-4.7/css/font-awesome.css';
+
+.content{
+  height: auto;
+  padding: 0px;
+}
+/*FLEX*/
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+nav ul{
+  display: block;
+}
+.outlet{
+  width: 100%;
+}
+

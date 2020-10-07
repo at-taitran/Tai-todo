@@ -1,0 +1,10 @@
+// Font
+@mixin fix-font($i){
+  .fn-#{$i} {
+      font-size:$i;
+  }
+}
+@for $i from 1 to 41{
+ @include fix-font($i)
+}
+

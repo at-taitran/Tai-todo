@@ -1,0 +1,33 @@
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="col-medium-4">
+  <ul>
+    <li><p class="fn-20">Register !</p></li>
+    <li><label for="username">User Name</label></li>
+    <li>
+      <input class="form-input bd-radius-8" type="text" id="username" formControlName="username">
+      <div class="col alert alert-danger" role="alert" *ngIf="form.hasError('invalidusername', ['username']) &&
+      form.get('username').touched">Invalid Username!</div>
+    </li>
+    <li><label for="email">Email</label></li>
+    <li><input class="form-input" type="email" id="email" formControlName="email">
+    </li>
+    <li></li>
+    <li></li>
+    <li formGroupName="pw">
+      <ul>
+        <li><label for="password">Pass word</label></li>
+        <li><input class="form-input" type="password" id="password" formControlName="password"></li>
+        <li><label for="cfpassword">Confirm password</label></li>
+        <li><input class="form-input" type="password" id="cfpassword" formControlName="confirmPassword"></li>
+        <li>
+          <div class="col alert alert-danger" role="alert" *ngIf="form.hasError('passwordnotmatch', ['pw']) &&
+          form.get('pw').touched">Password does not match!</div>
+        </li>
+      </ul>
+    </li>
+    <li class="flex-container">
+      <button type="submit" class="btn-sb">Register !</button>
+      <button routerLink="/auth/login" class="btn-sb">Back to Login!</button>
+    </li>
+  </ul>
+</form>

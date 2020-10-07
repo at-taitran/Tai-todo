@@ -1,0 +1,21 @@
+
+<div class="col-medium-12 container bg">
+  <form class="form flex-container-col" [formGroup]="formLogin" class="col-md-6" (ngSubmit)="onLogin()">
+    <h2>Log In</h2>
+    <ul>
+      <li><label for="user">User Name</label> </li>
+      <li>
+        <input class="in-lg" placeholder=" " type="text" id="user" name="us" formControlName="username">
+      </li>
+      <li>Pass Words</li>
+      <li>
+        <input class="in-lg" placeholder=" " type="password" id="pass" name="ps" formControlName="password">
+      </li>
+      <li class="flex-container">
+        <button class="btn-sb" type="submit">Login</button>
+        <div class="btn-sb register" routerLink="/auth/register"><span>Register !</span></div>
+      </li>
+    </ul>
+  </form>
+</div>
+

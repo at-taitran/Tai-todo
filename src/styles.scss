@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+/*FOnt awesome */
+@import '../node_modules/fontawesome-4.7/css/font-awesome.css';
+
+/*css */
+@import 'Share/styles.css';
+
+/*font ! */
+@mixin fix-font($i){
+  .fn-#{$i} {
+    font-size:$i;
+  }
+}
+@for $i from 1 to 41{
+ @include fix-font($i)
+};

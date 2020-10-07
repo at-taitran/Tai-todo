@@ -1,0 +1,49 @@
+<section class="flex-container-col todo">
+  <!-- Search form -->
+  <form class="col-medium-12 form-p flex-container" [formGroup]="formPost">
+    <label class="col-medium-2 reload" (click)="reload()"><i class="fa fa-chevron-down" aria-hidden="true"></i></label>
+    <input class="col-medium-10 search" placeholder="What needs to be done ?" formControlName="title" type="text"
+     value="{{title}}" (keyup.enter)="submitPost()" #searchbox autofocus [(ngModel)]="sbox" >
+    <button class="btn-save" type="submit">save</button>
+  </form>
+  <!--Table-->
+  <div class="col-medium-12 flex-container blockcontent" (mouseover)="hover(i)" (mouseout)="out(i)"
+    *ngFor="let i of titles">
+    <div class="col-medium-2 fm">
+      <div class="ckb" >
+        <label class="check" for="check{{i.id}}">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </label>
+        <input class="checkbox" id="check{{i.id}}" (click)="changestatus(i)" type="checkbox" value="{{i.status}}">
+        <img class="imgcb"  (click)="changestatus(i)" src="../../../assets/checkbox.PNG" alt="{{i.status}}">
+      </div>
+    </div>
+    <div class="col-medium-8 flex-container fm2">
+      <label for="ed{{i.id}}"  class="view" id="edit{{i.id}}"
+        (dblclick)="edit(i)">
+        <a rel="{{i.status}}" >{{i.title}}</a>
+      </label>
+      <input class="edit" id="ed{{i.id}}" (keyup.enter)="cfedit(i,ed.value)" #ed placeholder="{{i.title}}" type="text">
+    </div>
+    <div class="col-medium-2 del">
+      <span id="del{{i.id}}" (click)="delete(i)">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </span>
+    </div>
+  </div>
+  <div class="col-medium-12">
+    <div class="col-medium-12 Cstatus flex-container">
+      <div>
+        <span id="quantity"> {{quantity}} item left</span>
+      </div>
+      <div>
+        <a id="all" (click)="all()">All</a>
+        <a id="Active" (click)="active()">Active</a>
+        <a id="Complete" (click)="complete()">Complete</a>
+      </div>
+      <div>
+        <a class="complete" (click)="clearcompleted()">Clear completed</a>
+      </div>
+    </div>
+  </div>
+</section>
